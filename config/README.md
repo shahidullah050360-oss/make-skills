@@ -55,9 +55,13 @@ by design (this system never invents API access or credentials):
   → Network access) — e.g. to "Allow all" — or allowlist the specific domains.
 
 `data/04_Prospects.csv` has 9 unscored leads and `data/07_Content.csv` has
-8 keyword-unvalidated topic ideas from a WebSearch-only pass; `data/05_Competitor_Gaps.csv`,
-`data/06_Outreach.csv`, `data/08_Backlinks.csv`, `data/02_Keywords.csv`, and
-`data/03_Competitors.csv` are header-only pending Semrush/Ahrefs access. No
+8 keyword-unvalidated topic ideas from a WebSearch-only pass. `data/03_Competitors.csv`
+has 4 user-identified competitors (one per site: nerdwallet.com, nytimes.com/wirecutter,
+education.com, howtogeek.com) — real, topically legitimate picks, but their
+traffic/CPC/RPM figures are user-supplied and explicitly flagged as
+unverified in each row's `Notes`, since Semrush/Ahrefs remain blocked.
+`data/05_Competitor_Gaps.csv`, `data/06_Outreach.csv`, `data/08_Backlinks.csv`,
+and `data/02_Keywords.csv` are still header-only pending Semrush/Ahrefs access. No
 outreach has been sent, no content published, and no backlinks created.
 Once Semrush/Ahrefs access is restored and/or network access is broadened,
 re-run `RUN COMPETITORS` and `RUN PROSPECTS` per site to verify and score
