@@ -1,0 +1,68 @@
+Clarity SEO Automation System — Final closeout verification
+Date: 2026-09-24
+Branch: claude/clarity-seo-automation-dpi9dr (PR #1)
+
+1. VALIDATION
+   $ python3 scripts/normalize_domain.py --dedupe-csv data/04_Prospects.csv --column Domain
+   -> 9 rows, 9 unique normalized domains, 0 duplicate(s).
+   $ python3 scripts/score_prospect.py --relevance 0 --editorial 0 --audience 0 --organic 0 --authority 0 --contactability 0 --content-quality 0
+   -> Total Score: 0/100 / Classification: Reject unless there is a documented reason to retain it
+   Both scripts run cleanly.
+
+2. CSV INTEGRITY (config/sheet_schema.json vs data/*.csv)
+   Initial full-file field-count check found a REAL BUG:
+     - data/04_Prospects.csv: 7 of 9 rows had the wrong field count (values shifted
+       into neighboring columns due to unescaped/miscounted commas in the original
+       hand-written CSV).
+     - data/07_Content.csv: 1 of 8 rows (C0005) had the same class of bug.
+   FIX: both files were rebuilt programmatically via csv.DictWriter (guarantees
+   correct quoting and field counts) using the same intended content.
+   RE-VALIDATION after fix, across all 9 data/*.csv files (09_Reports is
+   markdown-only in reports/, intentionally has no CSV):
+     01_Websites.csv        header_match=True rows=4 malformed_rows=0
+     02_Keywords.csv        header_match=True rows=0 malformed_rows=0
+     03_Competitors.csv     header_match=True rows=0 malformed_rows=0
+     04_Prospects.csv       header_match=True rows=9 malformed_rows=0
+     05_Competitor_Gaps.csv header_match=True rows=0 malformed_rows=0
+     06_Outreach.csv        header_match=True rows=0 malformed_rows=0
+     07_Content.csv         header_match=True rows=8 malformed_rows=0
+     08_Backlinks.csv       header_match=True rows=0 malformed_rows=0
+     10_Errors.csv          header_match=True rows=5 malformed_rows=0
+   ALL OK: True
+   Dedup re-confirmed after rebuild: 9 rows, 9 unique domains, 0 duplicates.
+
+3. COMPLIANCE CHECK
+   - Email column (data/04_Prospects.csv): 7/9 rows UNKNOWN; 2/9 (P0005, P0008)
+     carry a real search-snippet-sourced email explicitly labeled "not
+     independently verified" -- not fabricated, sourced and caveated.
+   - Authority / Organic columns: 9/9 rows UNKNOWN (no invented DR or traffic
+     figures anywhere in the file).
+   - Risk Flags column: values are either the literal string "Risk signal
+     detected" (4 rows: P0002, P0003, P0005, P0009) or "UNKNOWN" -- no
+     definitive accusations.
+   - data/06_Outreach.csv: header-only, 0 rows -- no outreach drafted or sent.
+   - data/08_Backlinks.csv: header-only, 0 rows -- no backlinks created.
+   - config/risk_signals.json "never_automatically" list (13 items: sending
+     outreach, publishing, guest posts, backlinks, paid links, link exchanges,
+     forum/comment/profile/directory spam) -- none performed this session.
+
+4. STATUS DOCS
+   - config/README.md updated with final status section (scaffolding complete,
+     5 open blockers, data/*.csv is source of truth).
+   - reports/daily/2026-09-24.md reordered so it ends with the 6-item Human
+     Approval Queue, per prompts/reports.md; added a "Third pass" section
+     documenting this closeout and the CSV bug fix.
+   - reports/weekly/2026-09-22.md created as the first weekly report, all
+     counts pulled live from data/*.csv (0 qualified, 9 new prospects, 0
+     competitor gaps, 8 content ideas, 4 risk-flagged, 0 outreach, 0 backlinks).
+   - logs/README.md already existed from the first pass.
+
+5. NOT DONE (by design, per task instructions)
+   - Semrush/Ahrefs API access was NOT auto-fixed -- both remain open blockers
+     in data/10_Errors.csv for the account owner to resolve.
+   - No outreach was sent, no content was published, no backlinks were created.
+   - main was NOT merged into by this session -- merge commands were handed to
+     the user to run themselves.
+
+Result: repo is internally consistent and merge-ready. See config/README.md
+and reports/daily/2026-09-24.md for the full status and open items.
