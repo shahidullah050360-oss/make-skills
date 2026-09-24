@@ -1,0 +1,32 @@
+{
+  "description": "Internal prospect workflow score (0-100). Not a Google ranking score.",
+  "weights": {
+    "topical_relevance": 30,
+    "editorial_quality": 20,
+    "audience_fit": 15,
+    "organic_visibility": 15,
+    "authority": 10,
+    "contactability": 5,
+    "content_quality": 5
+  },
+  "max_score": 100,
+  "bands": [
+    { "min": 85, "max": 100, "label": "Strong candidate for human review" },
+    { "min": 70, "max": 84, "label": "Potential candidate" },
+    { "min": 50, "max": 69, "label": "Needs additional evidence" },
+    { "min": 0, "max": 49, "label": "Reject unless there is a documented reason to retain it" }
+  ],
+  "prospect_types": [
+    "editorial contribution",
+    "expert contribution",
+    "resource page",
+    "original research citation",
+    "statistics/data citation",
+    "broken-link opportunity",
+    "journalist/source opportunity",
+    "industry publication",
+    "educational resource",
+    "community resource",
+    "other"
+  ]
+}

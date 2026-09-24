@@ -1,0 +1,50 @@
+{
+  "spreadsheet_name": "CLARITY SEO COMMAND CENTER",
+  "websites": [
+    {
+      "id": 1,
+      "name": "Coverage Clarity",
+      "website": "https://www.shahidmags.site/",
+      "site_id": "4726884581283230407",
+      "niche": ["Insurance", "Personal finance", "Consumer finance", "Automotive", "Consumer protection"],
+      "country": "USA",
+      "audience": "UNKNOWN",
+      "priority": "High",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "BuyClarity",
+      "website": "https://www.buyclarity.site/",
+      "site_id": "4040163240745349926",
+      "niche": ["Shopping", "Consumer products", "Home products", "Gadgets", "Product guides"],
+      "country": "USA",
+      "audience": "UNKNOWN",
+      "priority": "High",
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "name": "Ilm Clarity",
+      "website": "https://www.ilmclarity.site/",
+      "site_id": "5680930549901813409",
+      "niche": ["Education", "Learning", "General knowledge", "Study resources", "Educational tools"],
+      "country": "USA",
+      "audience": "UNKNOWN",
+      "priority": "Medium",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "name": "Stack Clarity",
+      "website": "https://www.stackclarity.site/",
+      "site_id": "5769186058148003918",
+      "niche": ["Technology", "Software", "Artificial intelligence", "Programming", "Digital tools"],
+      "country": "USA",
+      "audience": "UNKNOWN",
+      "priority": "High",
+      "status": "Active"
+    }
+  ],
+  "notes": "Priority never overrides quality or compliance (Master Prompt Section 36). Do not mix prospects, keywords, content or backlink opportunities between sites unless an opportunity is genuinely relevant to both."
+}

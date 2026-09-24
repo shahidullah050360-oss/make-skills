@@ -1,0 +1,19 @@
+{
+  "master_spreadsheet": "CLARITY SEO COMMAND CENTER",
+  "tabs": {
+    "01_Websites": ["ID", "Name", "Website", "Site ID", "Niche", "Country", "Audience", "Priority", "Status"],
+    "02_Keywords": ["Keyword ID", "Site ID", "Keyword", "Type", "Search Intent", "Est. Volume", "Difficulty", "Priority Topic/Cluster", "Source", "Date Added", "Notes"],
+    "03_Competitors": ["Competitor ID", "Site ID", "Competitor Domain", "Relevance", "Notes", "Date Added"],
+    "04_Prospects": ["Prospect ID", "Site ID", "Target Website", "Domain", "URL", "Title", "Niche", "Country", "Opportunity Type", "Relevance", "Editorial", "Audience", "Organic", "Authority", "Contactability", "Content Quality", "Total Score", "Evidence URL", "Relevant Page", "Contact URL", "Submission URL", "Contact Name", "Email", "Risk Flags", "Reason", "Outreach Angle", "Status", "Date Added", "Last Checked", "Notes"],
+    "05_Competitor_Gaps": ["Gap ID", "Site ID", "Competitor", "Referring Domain", "Source URL", "Target URL", "Opportunity Type", "Relevance", "Evidence", "Risk", "Status", "Notes"],
+    "06_Outreach": ["Outreach ID", "Site ID", "Prospect ID", "Domain", "Contact", "Email", "Subject", "Draft", "Approval", "Date Approved", "Date Sent", "Response", "Follow Up", "Outcome", "Status", "Notes"],
+    "07_Content": ["Content ID", "Site ID", "Topic", "Keyword", "Search Intent", "Content Type", "Title", "Outline", "Sources", "Internal Links", "External References", "Status", "Date Added", "Notes"],
+    "08_Backlinks": ["Backlink ID", "Site ID", "Target URL", "Source Domain", "Published URL", "Anchor", "Link Type", "rel", "First Seen", "Last Checked", "Status", "Notes"],
+    "09_Reports": ["Report ID", "Type", "Period", "Site ID", "Generated Date", "File Path", "Summary"],
+    "10_Errors": ["Date", "Site ID", "Component", "Error", "Severity", "Resolution", "Status"]
+  },
+  "outreach_statuses": ["NEW", "DRAFTED", "HUMAN_REVIEW", "APPROVED", "SENT", "REPLIED", "FOLLOW_UP", "ACCEPTED", "REJECTED", "NO_RESPONSE", "CLOSED"],
+  "backlink_statuses": ["PENDING", "ACTIVE", "NO_LINK", "PAGE_ERROR", "LOST", "REDIRECTED", "CHANGED", "REVIEW_REQUIRED"],
+  "prospect_statuses": ["NEW", "QUALIFIED", "NEEDS_EVIDENCE", "REJECTED", "APPROVED", "RISK_FLAGGED"],
+  "sync_note": "No Google Sheets cell/tab-write tool is currently connected in this session (Google Drive MCP only creates/reads/renames whole files; it cannot add sheet tabs or write ranges). See prompts/sheets_sync.md for the two real paths to live sync: (1) a Make.com scenario using the Google Sheets module once the Make MCP connector reconnects, or (2) manual import of the CSVs in data/ into a spreadsheet with these exact tab names and column headers."
+}

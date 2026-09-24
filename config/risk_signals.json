@@ -1,0 +1,37 @@
+{
+  "policy": "Flag using the exact phrase \"Risk signal detected\" instead of making a definitive accusation when evidence is uncertain. Never make unsupported accusations.",
+  "signals": [
+    "PBN behavior",
+    "hacked content",
+    "spun content",
+    "copied content",
+    "casino spam",
+    "adult spam",
+    "pharmaceutical spam",
+    "irrelevant content",
+    "obvious link-selling pages",
+    "excessive outbound links",
+    "fake businesses",
+    "expired-domain SEO networks",
+    "doorway pages",
+    "thin websites",
+    "websites created primarily for links",
+    "suspicious repetitive content",
+    "obvious SEO manipulation"
+  ],
+  "never_automatically": [
+    "sending outreach emails",
+    "publishing articles",
+    "submitting guest posts",
+    "creating backlinks",
+    "inserting links into third-party websites",
+    "purchasing links",
+    "accepting paid link arrangements",
+    "agreeing to commercial terms",
+    "automatically exchanging links",
+    "automatically creating forum links",
+    "automatically creating comments",
+    "automatically creating profile links",
+    "automatically creating directory spam"
+  ]
+}
