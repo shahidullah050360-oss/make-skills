@@ -27,18 +27,23 @@ RUN VERIFY, RUN DAILY/WEEKLY/MONTHLY REPORT, SYNC SHEETS).
 
 ## Status as of 2026-09-24
 
-Scaffolding only — no research has run yet. Both external data providers
-returned account-level errors on first use (see `data/10_Errors.csv`):
+Five open blockers in `data/10_Errors.csv`:
 
-- **Semrush**: out of API units (`no_api_units`).
-- **Ahrefs**: "Insufficient plan" (even on the free domain-rating and
-  usage-limit endpoints).
+- **Semrush**: out of API units (`no_api_units`) — re-checked, still open.
+- **Ahrefs**: "Insufficient plan" on every endpoint, including free ones — re-checked, still open.
 - **Make MCP**: proxy refused the connection (403) — not required for
   research, only for a future Sheets-sync scenario.
 - **Google Sheets**: no cell/tab-write tool connected; `data/*.csv` is the
   real source of truth for now (see `prompts/sheets_sync.md`).
+- **Network egress**: this environment's network policy blocks `WebFetch`
+  to most third-party domains, so the 9 leads found via `WebSearch` on
+  2026-09-24 could not be independently verified and sit at
+  `NEEDS_EVIDENCE`/`REJECTED` in `data/04_Prospects.csv`. Fix from the
+  cloud environment menu (session title bar → Edit → Network access).
 
-Once Semrush and/or Ahrefs access is restored, re-run `RUN COMPETITORS` and
-`RUN PROSPECTS` per site to populate real data — this system will not
-fabricate keyword volumes, competitor lists, or contact details in the
-meantime.
+`data/04_Prospects.csv` has 9 unscored leads and `data/07_Content.csv` has
+8 keyword-unvalidated topic ideas from a WebSearch-only pass. Once
+Semrush/Ahrefs access is restored and/or network access is broadened,
+re-run `RUN COMPETITORS` and `RUN PROSPECTS` per site to verify and score
+real data — this system will not fabricate keyword volumes, competitor
+lists, authority/organic scores, or contact details in the meantime.
